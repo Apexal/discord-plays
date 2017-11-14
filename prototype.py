@@ -23,12 +23,9 @@ class Player:
             self.listening = True
             print('Started listening...')
         elif self.listening:
-            for text in input.split(' '):
-                text = text.lower()
-
-                self.keyboard(text)
-                print(text)
-                time.sleep(0.5)
+            # Just take first word/letter
+            input = input.split(' ')[0]
+            self.keyboard(input.lower())
 
     def keyboard(self, key):
         key = key.lower()
