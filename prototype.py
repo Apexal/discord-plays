@@ -1,7 +1,10 @@
 import discord
 import asyncio
-import pyautogui
+#import pyautogui
 import os
+import time
+
+import keyboard
 
 client = discord.Client()
 
@@ -25,14 +28,11 @@ class Player:
 
                 self.keyboard(text)
                 print(text)
+                time.sleep(0.5)
 
     def keyboard(self, key):
         key = key.lower()
-
-        if key in ['up', 'down', 'left', 'right', 'enter', 'return', 'shift', 'escape']:
-            pyautogui.press(key)
-        else:
-            pyautogui.typewrite(key, interval=0.2)
+        keyboard.send_letter(key)
 
 @client.event
 async def on_error(event):
