@@ -418,8 +418,7 @@ def send_letter(letter):
         SendInput(Keyboard(key))
         time.sleep(0.1)
         SendInput(Keyboard(key, KEYEVENTF_KEYUP))
-    
-    else:#if letter.isalpha():
+    elif len(letter) == 1:#if letter.isalpha():
         key = globals()['KEY_' + letter[0].upper()]
         SendInput(Keyboard(key))
         time.sleep(0.1)
