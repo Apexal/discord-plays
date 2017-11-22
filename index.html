@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Realtime controller.">
+        <meta name="keywords" content="realtime,controller,discord,chat,emulator">
+        <meta name="author" content="Frank Matranga">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Discord Plays Controller</title>
+        
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    
+    <body>
+        
+        <script>
+            var socket = io('http://localhost');
+            socket.on('news', function (data) {
+                console.log(data);
+                socket.emit('my other event', { my: 'data' });
+            });
+        </script>
+        
+        <div id="controller">
+            <!-- Controls will go here -->
+        </div>
+    </body>
+</html>
