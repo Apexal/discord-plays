@@ -411,7 +411,7 @@ def send_messages(total):
         send_one_message()
 
 def send_letter(letter):
-    if letter in ['up', 'down', 'left', 'right', 'enter', 'return', 'shift', 'escape']:
+    if letter in ['up', 'down', 'left', 'right', 'enter', 'return', 'shift', 'escape', 'space']:
         if letter == 'enter':
             letter = 'return'
         key = globals()['VK_' + letter.upper()]
